@@ -1,5 +1,4 @@
-let container = document.querySelector('#container')
-let grid = document.createElement('div')
+let container = document.querySelector('#container');
 
 function requestUserInput(){
 
@@ -24,10 +23,14 @@ if (numberOfGrid <4 || numberOfGrid>64){
 function gridFormation() {
 let numberOfGrid = requestUserInput();
 for (i = 0; i < numberOfGrid; i++){
-    container.appendChild(grid);
-    console.log("grid formation number" + i);
-}
-
+        let grid = document.createElement('div');
+        grid.id= "box_" + i;
+        grid.classList.add('colourfulDiv');
+        grid.textContent="this is grid no " + i;
+        grid.style="font-size: 20px; display: grid;"
+        container.appendChild(grid);
+        console.log("grid formation number" + i);
+    }
 }
 
 let buttonCLick = document.getElementById('btn').addEventListener('click', () => {

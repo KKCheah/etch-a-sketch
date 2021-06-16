@@ -1,7 +1,5 @@
-#body{
+body{
     display: grid;
-    width: 100vw;
-    height: 100vh;
 }
 
 #header1{
@@ -9,11 +7,31 @@
     color: black;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     justify-self: center;
+    
 }
 
 #container{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
     justify-self: center;
     height: 90vh;
     width: 90vw;
     border: 10px solid black;
+}
+
+html {
+    background-color: beige;
+}
+
+html :hover {
+    background-color: yellow;
+}
+
+div[id^=box_]:hover {
+    background-color: rgb(189, 109, 135);
+    
+}
+
+#container:hover {
+    background-color: rgb(21, 25, 243);
 }
