@@ -12,11 +12,12 @@ body{
 
 #container{
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    /*grid-template-columns: repeat(10, 1fr);*/
     justify-self: center;
-    height: 90vh;
-    width: 90vw;
+    height: 750px;
+    width: 750px;
     border: 10px solid black;
+    overflow: visible;
 }
 
 html {
@@ -33,5 +34,5 @@ html :hover {
 }*/
 
 #container:hover div[id^=box_] {
-    background-color: rgb(21, 25, 243);
+    background-color: rgb(231, 214, 135);
 }
