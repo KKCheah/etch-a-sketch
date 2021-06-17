@@ -24,14 +24,14 @@ html {
 }
 
 html :hover {
-    background-color: yellow;
+    background-color: beige;
 }
 
-div[id^=box_]:hover {
+/*div[id^=box_]:hover {
     background-color: rgb(189, 109, 135);
     
-}
+}*/
 
-#container:hover {
+#container:hover div[id^=box_] {
     background-color: rgb(21, 25, 243);
 }

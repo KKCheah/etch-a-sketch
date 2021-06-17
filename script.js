@@ -6,7 +6,7 @@ function requestUserInput(){
 let numberOfGrid = prompt("How many boxes would you like?(key in a value within 1-64)");
 numberOfGrid = parseInt(numberOfGrid);
 
-if (numberOfGrid <4 || numberOfGrid>64){
+if (numberOfGrid <4 || numberOfGrid>640){
     alert("Value inserted not within range, please insert a value within 1 to 64");
     requestUserInput();
 } else if (typeof numberOfGrid != "number" ) {
@@ -30,11 +30,34 @@ for (i = 0; i < numberOfGrid; i++){
         grid.style="font-size: 20px; display: grid;"
         container.appendChild(grid);
         console.log("grid formation number" + i);
+        activateAfter(i);
+        
     }
 }
 
 let buttonCLick = document.getElementById('btn').addEventListener('click', () => {
 console.log("button test clicked");
 gridFormation();
+activateAfter();
 });
+
+function activateAfter(i){
+
+function randomColour() {
+    let randomiser = Math.floor(Math.random()*16777215).toString(16);  
+    return randomiser;
+}
+
+document.getElementById(`box_${i}`).addEventListener('mouseover', (e)=>{
+    console.log(e);
+    document.getElementById(`box_${i}`).style.backgroundColor = "#" + randomColour(); 
+    
+});
+
+document.getElementById(`box_${i}`).addEventListener('mouseout', (e)=>{
+    console.log(e);
+    document.getElementById(`box_${i}`).style.backgroundColor = "#" + randomColour(); 
+    
+});
+}
 
