@@ -24,7 +24,7 @@ html {
     background-color: beige;
 }
 
-html :hover {
+:hover html {
     background-color: beige;
 }
 
@@ -35,4 +35,49 @@ html :hover {
 
 #container:hover div[id^=box_] {
     background-color: rgb(231, 214, 135);
+}
+
+button {
+display: flex;
+flex-direction: column;
+height: 20px;
+width: 200px;
+
+}
+
+#spacer{
+    height: 50px;
+}
+
+
+#btn {
+    background-color: rgb(196, 224, 255);
+    border: 10px;
+    margin: 10px;
+    height: 20px;
+    width: 200px;
+}
+
+button#btn:hover {
+    background-color: grey;
+
+}
+
+#clear {
+    background-color: rgb(196, 255, 196);
+    border: 10px;
+    margin: 10px;
+    height: 20px;
+    width: 200px;
+}
+button#clear:hover {
+    background-color: rgb(255, 200, 196);
+    
+}
+
+#btnContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

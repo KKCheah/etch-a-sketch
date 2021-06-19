@@ -15,11 +15,11 @@ document.getElementById('container').style.gridTemplateRows = `repeat(${numberOf
 
 
 
-if (numberOfGrid <4 || numberOfGrid>640){
-    alert("Value inserted not within range, please insert a value within 1 to 64");
+if (numberOfGrid <1 || numberOfGrid>100){
+    alert("Value inserted not within range, please insert a value within 1 to 100");
     requestUserInput();
 } else if (typeof numberOfGrid != "number" ) {
-    alert("Value inserted not a number, please insert a value within 1 to 64");
+    alert("Value inserted not a number, please insert a value within 1 to 100");
     requestUserInput();
 } else {
     console.log("reached end of requestUserInput function")
@@ -39,9 +39,7 @@ let numberOfGrid = requestUserInput();
 
 }
 
-function testPrint(x=0){
-    console.log(x);
-}
+
 
 function printOneRow(numberOfGrid){
     
@@ -86,6 +84,18 @@ document.getElementById(`box_${i}`).addEventListener('mouseout', (e)=>{
 });
 }
 
+function clearHTML() {
+    while (container.hasChildNodes()){
+        container.removeChild(container.firstChild);
+    }
+}
+
 document.getElementById('clear').addEventListener('click', () => { location.reload()
  console.log("reload");   
 })
+
+document.getElementById('reset').addEventListener('click', () => {
+    clearHTML();
+    console.log("test reset");
+    gridFormation();   
+   })
