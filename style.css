@@ -54,12 +54,14 @@ div:hover html {
 button {
 display: flex;
 flex-direction: column;
+justify-content: center;
 border-color: black;
 border: 10px;
 margin: 10px;
-height: 20px;
+height: 40px;
 width: 200px;
-
+font-size: 20px;
+border-radius: 25px;
 }
 
 #spacer{
@@ -72,8 +74,9 @@ width: 200px;
     background-color: rgb(196, 224, 255);
     border: 10px;
     margin: 10px;
-    height: 20px;
+    height: 40px;
     width: 200px;
+    border-radius: 25px;
 }
 
 button#btn:hover {
@@ -86,8 +89,9 @@ button#btn:hover {
     background-color: rgb(196, 255, 196);
     border: 10px;
     margin: 10px;
-    height: 20px;
+    height: 40px;
     width: 200px;
+    border-radius: 25px;
 }
 
 button#clear:hover {

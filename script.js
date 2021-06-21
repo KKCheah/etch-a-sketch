@@ -3,7 +3,7 @@ let container = document.querySelector('#container');
 function requestUserInput(){
 
 
-let numberOfGrid = prompt("How many boxes would you like?(key in a value within 1-64)");
+let numberOfGrid = prompt("How many boxes would you like?(key in a value within 1-100)");
 numberOfGrid = parseInt(numberOfGrid);
 
 
