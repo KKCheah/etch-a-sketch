@@ -7,6 +7,7 @@ body{
     color: black;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     justify-self: center;
+    margin: 20px;
     
 }
 
@@ -18,14 +19,27 @@ body{
     width: 750px;
     border: 10px solid black;
     overflow: visible;
+    background-color: white;
 }
 
 html {
-    background-color: beige;
+    animation-name: test;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-:hover html {
-    background-color: beige;
+@keyframes test {
+   0%  {background-color: rgb(166, 217, 240);}
+  25%  {background-color: rgb(152, 212, 240);}
+  50%  {background-color: rgb(110, 196, 236);}
+  100% {background-color: rgb(61, 181, 236);}
+}
+
+
+div:hover html {
+    background-color: rgb(255, 255, 255);
+    
 }
 
 /*div[id^=box_]:hover {
@@ -33,19 +47,23 @@ html {
     
 }*/
 
-#container:hover div[id^=box_] {
-    background-color: rgb(231, 214, 135);
+#container:hover div {
+    background-color: rgb(255, 255, 255);
 }
 
 button {
 display: flex;
 flex-direction: column;
+border-color: black;
+border: 10px;
+margin: 10px;
 height: 20px;
 width: 200px;
 
 }
 
 #spacer{
+    display: grid;
     height: 50px;
 }
 
@@ -59,8 +77,9 @@ width: 200px;
 }
 
 button#btn:hover {
-    background-color: grey;
-
+    background-color: rgb(214, 45, 45);
+    scale: 1.1;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
 }
 
 #clear {
@@ -70,8 +89,11 @@ button#btn:hover {
     height: 20px;
     width: 200px;
 }
+
 button#clear:hover {
     background-color: rgb(255, 200, 196);
+    scale: 1.1;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
     
 }
 
@@ -80,4 +102,55 @@ button#clear:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+#reset:hover {
+    background-color: brown;
+    scale: 1.1;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+}
+
+#displayGridNo {
+    justify-self: center;
+    align-items: auto;  
+    height: 30px;
+    width: 300px;
+    border: 5px solid black;
+}
+
+#displayGridItem {
+    display: grid;
+    justify-self: center;
+    justify-content: center;
+}
+
+#black:hover {
+    background-color: black;
+    box-shadow: black;
+    scale: 1.1;
+}
+
+#multiColor:hover{
+    background: linear-gradient(
+        135deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    scale: 1.1;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+}
+
+.shareButtonTest:hover{
+    scale: 1.1;
+    background-color: rgb(101, 101, 238);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
 }
