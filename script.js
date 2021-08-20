@@ -4,21 +4,13 @@ function requestUserInput(){
 
 
 let numberOfGrid = prompt("How many boxes would you like?(key in a value within 1-100)");
+
 numberOfGrid = parseInt(numberOfGrid);
-
-
-
-
-document.getElementById('container').style.gridTemplateColumns = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
-document.getElementById('container').style.gridTemplateRows = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
-//document.getElementById('container').style.gridTemplateRows = `repeat(${numberOfGrid}, 1fr)`;
-
-
 
 if (numberOfGrid <1 || numberOfGrid>100){
     alert("Value inserted not within range, please insert a value within 1 to 100");
     requestUserInput();
-} else if (typeof numberOfGrid != "number" ) {
+} else if (isNaN(numberOfGrid) ) {
     alert("Value inserted not a number, please insert a value within 1 to 100");
     requestUserInput();
 } else {
@@ -30,6 +22,9 @@ if (numberOfGrid <1 || numberOfGrid>100){
 }
 
 
+document.getElementById('container').style.gridTemplateColumns = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
+document.getElementById('container').style.gridTemplateRows = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
+//document.getElementById('container').style.gridTemplateRows = `repeat(${numberOfGrid}, 1fr)`;
 
 
 function gridFormation() {
@@ -38,7 +33,6 @@ let numberOfGrid = requestUserInput();
     printOneRow(numberOfGrid*numberOfGrid);
     showNoPixel(numberOfGrid);
 }
-
 
 
 function printOneRow(numberOfGrid){
