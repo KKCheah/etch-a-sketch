@@ -1,32 +1,25 @@
 let container = document.querySelector('#container');
 
 function requestUserInput(){
-
-
 let numberOfGrid = prompt("How many boxes would you like?(key in a value within 1-100)");
-
 numberOfGrid = parseInt(numberOfGrid);
 
-document.getElementById('container').style.gridTemplateColumns = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
-document.getElementById('container').style.gridTemplateRows = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
 
 if (numberOfGrid <1 || numberOfGrid>100){
     alert("Value inserted not within range, please insert a value within 1 to 100");
-    requestUserInput();
+    return requestUserInput();
 } else if (isNaN(numberOfGrid) ) {
     alert("Value inserted not a number, please insert a value within 1 to 100");
-    requestUserInput();
+    return requestUserInput();
 } else {
     console.log("reached end of requestUserInput function")
-    
+    document.getElementById('container').style.gridTemplateColumns = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
+    document.getElementById('container').style.gridTemplateRows = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
+    return numberOfGrid
 }
-    console.log("testing return");
-    return parseInt(numberOfGrid);
+   
 }
 
-
-
-//document.getElementById('container').style.gridTemplateRows = `repeat(${numberOfGrid}, 1fr)`;
 
 
 function gridFormation() {
@@ -43,7 +36,6 @@ function printOneRow(numberOfGrid){
         let grid = document.createElement('div');
         grid.id= "box_" +i;
         grid.classList.add('colourfulDiv');
-        //grid.textContent="this is grid no " + i;
         grid.style="font-size: 20px; min-height: 0; min-width: 0;"
         container.appendChild(grid);
         console.log("grid formation number" + i);
@@ -58,7 +50,6 @@ let buttonClick = document.getElementById('btn').addEventListener('click', () =>
 console.log("button test clicked");
 gridFormation();
 
-//activateAfter(i);
 });
 
 function randomColour() {
@@ -122,7 +113,6 @@ function darkerColour(i){
     
     document.getElementById(`box_${i}`).addEventListener('mouseout', (e)=>{
         console.log(e);
-        //document.getElementById(`box_${i}`).style.filter =  `brightness(${value}%)`;
         document.getElementById(`box_${i}`).style.backgroundColor = "black";
         setInterval(function(){
             document.getElementById(`box_${i}`).style.opacity = (parseFloat(document.getElementById(`box_${i}`).style.opacity) || 0) - 0.05;
@@ -172,9 +162,8 @@ function showNoPixel(i){
     displayContainer.appendChild(display);
 }
 
+
 //for black and white square:
-
-
 function blackColour(i) {
     
 document.getElementById(`box_${i}`).addEventListener('mouseover', (e)=>{
