@@ -1,15 +1,28 @@
 body{
     display: grid;
+    width: 100vw;
+    height: 100vh;
 }
 
 #header1{
-    font-size: 5vw;
+    font-size: 3vw;
     color: black;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     justify-self: center;
-    margin: 20px;
+    margin: 10px;
     
 }
+
+#header2{
+    font-size: 0.9vw;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    justify-self: center;
+    margin: 1px;
+  
+}
+
+
 
 #container{
     display: grid;
