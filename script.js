@@ -7,6 +7,9 @@ let numberOfGrid = prompt("How many boxes would you like?(key in a value within 
 
 numberOfGrid = parseInt(numberOfGrid);
 
+document.getElementById('container').style.gridTemplateColumns = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
+document.getElementById('container').style.gridTemplateRows = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
+
 if (numberOfGrid <1 || numberOfGrid>100){
     alert("Value inserted not within range, please insert a value within 1 to 100");
     requestUserInput();
@@ -22,8 +25,7 @@ if (numberOfGrid <1 || numberOfGrid>100){
 }
 
 
-document.getElementById('container').style.gridTemplateColumns = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
-document.getElementById('container').style.gridTemplateRows = `repeat(${numberOfGrid}, minmax(0, 1fr))`;
+
 //document.getElementById('container').style.gridTemplateRows = `repeat(${numberOfGrid}, 1fr)`;
 
 
